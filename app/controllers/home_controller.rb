@@ -7,6 +7,6 @@ class HomeController < ApplicationController
       redirect_to :new_user_registration
     end
 =end
-    render 'tests/gallery'
+    render 'questions/questions'
   end
 end

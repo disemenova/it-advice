@@ -41,3 +41,42 @@ p{
     gap: 20px;
 
 }
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.question__block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.71);
+    border-radius: 30px;
+    padding-bottom: 20px;
+
+}
+
+.question{
+    display: flex;
+    flex-direction: row;
+    font-size: 64px;
+}
+.answers{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-left: 60px;
+}
+.answer{
+    width: 548px;
+    border-radius: 12px;
+    border:1px solid rgba(225, 152, 225, 1);
+    margin-top: 20px;
+}
+
+.ask{
+    font-size: 48px;
+}
