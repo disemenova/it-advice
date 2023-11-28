@@ -14,7 +14,7 @@
 .flex-container{
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between;
     gap:30px;
     max-width:1313px;
     width: 100%;
@@ -52,9 +52,9 @@ p{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.71);
+    background-image: url("background.png");
     border-radius: 30px;
-    padding-bottom: 20px;
+    padding-bottom: 80px;
 
 }
 
@@ -79,4 +79,17 @@ p{
 
 .ask{
     font-size: 48px;
+}
+.flex-container__question{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap:30px;
+    max-width:1313px;
+    width: 100%;
+}
+.number_questions{
+    font-weight: 600;
+    font-size: 46px;
 }
