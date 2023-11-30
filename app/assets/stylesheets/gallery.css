@@ -68,7 +68,9 @@ p{
     font-weight: 400;
 }
 
-button{
+.button{
+    display: flex;
+    justify-content: center;
     background-color: #D4F17C;
     height: 73px;
     width: 300px;

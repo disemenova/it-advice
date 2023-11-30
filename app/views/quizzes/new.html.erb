@@ -1,0 +1,29 @@
+<h1>Создание нового Quiz</h1>
+
+<%= form_with(model: @quiz, url: quizzes_path) do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <h2>Вопросы:</h2>
+
+  <div id="questions">
+    <%= render 'question_fields', f: form %>
+  </div>
+
+  <button id="add_question" type="button">Добавить вопрос</button>
+
+  <div class="actions">
+    <%= form.submit "Создать Quiz" %>
+  </div>
+<% end %>
+
+<div>
+  <%= link_to "Back to quizzes", quizzes_path %>
+</div>

@@ -75,6 +75,8 @@ h2{
 .result__header{
     font-weight: 600;
     font-size: 50px;
+
+    margin-bottom: 15px;
 }
 .first__sentence{
     color:white;
