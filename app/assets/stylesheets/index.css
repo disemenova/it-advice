@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+}
+.main-page{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(122,112,213);
+    height: 100vh;
+}
+.main-page__content{
+    max-width: 1400px;
+    width:100%;
+    margin-top: 50px;
+}
+.main-page__header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.register-button{
+    display: flex;
+    align-items: center;
+    border-radius: 13px;
+    background-color: rgba(212, 241, 124, 1);
+    padding: 12px 62px  12px 62px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 32px;
+}
+.register-button:hover{
+    color: red;
+}
+.main-page__body{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 100px;
+    padding-bottom: 40px;
+}
+.main-page__body__heading{
+    font-size: 48px;
+    font-weight: 500;
+}
+.main-page__body__description{
+    max-width: 500px;
+    width:100%;
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+.show_quizzes__button{
+    background-color: rgba(225, 152, 225, 1);
+    color: white;
+    width: 190px;
+    padding: 10px 50px 10px 50px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 18px;
+    margin-top: 130px;
+}
+.show_quizzes__button:hover{
+     color: red;
+ }
+.main-page__body__left-block{
+    display: flex;
+    flex-direction: column;
+}
+.flex-container{
+    display: flex;
+    max-width: 1400px;
+    width: 100%;
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+.footer__content{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+}
+.lists{
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+}
+.first-list{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+.second-list{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+p{
+    font-weight: 500;
+}
+::-webkit-scrollbar {
+    width: 0;
+}
+
+.remember{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+.checkbox{
+    width: 20px;
+    margin-left: 20px;
+}
+.link{
+    margin-top: 20px;
+}

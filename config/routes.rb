@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   post 'answer/save', to: 'answer#save', as: 'save_answer_path'
   resources :quizzes
   devise_for :users, controllers: {
-    registrations: 'users/registrations'
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
   }
   root 'quizzes#index'
   get 'home/index'

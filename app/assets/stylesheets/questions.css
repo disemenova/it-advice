@@ -67,8 +67,8 @@ p{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    margin-left: 60px;
+    justify-content: center;
+    margin-left: 20px;
 }
 .answer{
     width: 548px;
@@ -92,4 +92,19 @@ p{
 .number_questions{
     font-weight: 600;
     font-size: 46px;
+}
+.questions{
+    display: flex;
+    flex-direction: column;
+}
+.question{
+    display: flex;
+    flex-direction: column;
+}
+.flex-container__form{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    max-width: 1313px;
+    width: 100%;
 }

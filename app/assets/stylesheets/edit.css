@@ -1,0 +1,40 @@
+.body{
+    display: flex;
+    justify-content: center;
+
+}
+.body__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.flex-container__form{
+    max-width: 1313px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.delete{
+    color: black;
+    background-color: #8F78F7;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+}
+.delete:hover{
+    color: red;
+
+}
+.update{
+    color: black;
+    background-color: #8F78F7;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+}
+.update:hover{
+    color: red;
+}
+.header{
+    margin-top: 10px;
+}
