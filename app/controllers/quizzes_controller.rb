@@ -6,7 +6,7 @@ class QuizzesController < ApplicationController
 
   # GET /quizzes or /quizzes.json
   def index
-    @quizzes = Quiz.all.limit 10
+    @quizzes = Quiz.all
   end
 
   # GET /quizzes/1 or /quizzes/1.json
@@ -46,16 +46,33 @@ class QuizzesController < ApplicationController
 
   # GET /quizzes/new
   def new
+    begin
+    authorize Quiz
+    rescue Pundit::NotAuthorizedError
+      redirect_to quizzes_path, notice: 'У вас нет доступа к созданию тестов'
+    end
+
     @quiz = Quiz.new
     @quiz.questions.build
     @quiz.questions.first.answers.build
   end
   # GET /quizzes/1/edit
   def edit
+    begin
+      authorize @current_quiz
+    rescue Pundit::NotAuthorizedError
+      redirect_to quizzes_path, notice: 'У вас нет доступа к изменению тестов'
+    end
   end
 
   # POST /quizzes or /quizzes.json
   def create
+    begin
+      authorize Quiz
+    rescue Pundit::NotAuthorizedError
+      redirect_to quizzes_path, notice: 'У вас нет доступа к созданию тестов'
+    end
+
     @quiz = Quiz.new(quiz_params)
 
     if @quiz.save
@@ -63,22 +80,16 @@ class QuizzesController < ApplicationController
     else
       render :new
     end
-
-=begin
-    respond_to do |format|
-      if @current_quiz.save
-        format.html { redirect_to quiz_url(@current_quiz), notice: "Quiz was successfully created." }
-        format.json { render :show, status: :created, location: @current_quiz }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @current_quiz.errors, status: :unprocessable_entity }
-      end
-    end
-=end
   end
 
   # PATCH/PUT /quizzes/1 or /quizzes/1.json
   def update
+    begin
+      authorize @current_quiz
+    rescue Pundit::NotAuthorizedError
+      redirect_to quizzes_path, notice: 'У вас нет доступа к изменению тестов'
+    end
+
     respond_to do |format|
       if @current_quiz.update(quiz_params)
         format.html { redirect_to quiz_url(@current_quiz), notice: "Quiz was successfully updated." }
@@ -92,6 +103,12 @@ class QuizzesController < ApplicationController
 
   # DELETE /quizzes/1 or /quizzes/1.json
   def destroy
+    begin
+      authorize @current_quiz
+    rescue Pundit::NotAuthorizedError
+      redirect_to quizzes_path, notice: 'У вас нет доступа к удалению тестов'
+    end
+
     @current_quiz.destroy!
 
     respond_to do |format|
