@@ -71,6 +71,7 @@ class QuizzesController < ApplicationController
       authorize Quiz
     rescue Pundit::NotAuthorizedError
       redirect_to quizzes_path, notice: 'У вас нет доступа к созданию тестов'
+      return
     end
 
     @quiz = Quiz.new(quiz_params)
@@ -88,6 +89,7 @@ class QuizzesController < ApplicationController
       authorize @current_quiz
     rescue Pundit::NotAuthorizedError
       redirect_to quizzes_path, notice: 'У вас нет доступа к изменению тестов'
+      return
     end
 
     respond_to do |format|
@@ -107,6 +109,7 @@ class QuizzesController < ApplicationController
       authorize @current_quiz
     rescue Pundit::NotAuthorizedError
       redirect_to quizzes_path, notice: 'У вас нет доступа к удалению тестов'
+      return
     end
 
     @current_quiz.destroy!
